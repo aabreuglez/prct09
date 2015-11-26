@@ -1,3 +1,4 @@
+# encoding: UTF-8
 require 'spec_helper'
 require 'Bibliography'
 
@@ -118,25 +119,25 @@ describe Bibliography do
     
     describe "Existen los gets necesarios" do
       it "Existe un metodo para obtener autores" do
-        @b1.lista_autores.should match_array(["Carlos Ruiz Zafon"])
+        @b1.autor.should match_array(["Carlos Ruiz Zafon"])
       end
       it "Existe un metodo para obtener el titulo" do
-        @b1.get_title.should == "La Sombra del Viento"
+        @b1.titulo.should == "La Sombra del Viento"
       end
       it "Existe un metodo para obtener la serie" do
-          @b1.get_serie.should == ""
+          @b1.serie.should == ""
       end
       it "Existe un metodo para obtener la editorial" do
-         @b1.get_editorial.should == "Planeta"
+         @b1.editorial.should == "Planeta"
       end
       it "Existe un metodo para obtener el numero de edicion" do
-        @b1.get_edicion.should == 9
+        @b1.edicion.should == 9
       end
       it "Existe un metodo para obtener la fecha de publicacion" do
-        @b1.get_fecha.should == '10 de Diciembre 2011'
+        @b1.fecha.should == '10 de Diciembre 2011'
       end
       it "Existe un metodo para obtener el listado de ISBN" do
-        @b1.get_isbn.should match_array([9788408079545])
+        @b1.isbn.should match_array([9788408079545])
       end
       it "Existe un metodo para obtener la referencia formateada" do
         @b1.to_s.should == "Carlos Ruiz Zafon\nLa Sombra del Viento\nPlaneta; 9 edicion (10 de Diciembre 2011)\nISBN-13: 9788408079545\n"

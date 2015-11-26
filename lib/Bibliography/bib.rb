@@ -53,34 +53,6 @@ class Bibliography
         end
     end    
     
-    def lista_autores
-        @autor
-    end
-    
-    def get_title
-       @titulo
-    end
-    
-    def get_serie
-        @serie
-    end
-    
-    def get_editorial
-        @editorial
-    end
-    
-    def get_edicion
-        @edicion
-    end
-    
-    def get_fecha
-        @fecha
-    end
-    
-    def get_isbn
-        @isbn
-    end
-    
     def to_s
         cadena = ''
         prueba=false;
