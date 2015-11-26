@@ -1,7 +1,8 @@
+# encoding: UTF-8
 require 'spec_helper'
 require 'Bibliography'
 
-# encoding: utf-8
+
 describe ArtPer do
     before :each do
         @per1 = ArtPer.new(["Ramirez"],"Mojo picon","El dia","Tenerife","11 de Noviembre de 2014","Seccion Nuestra Gente",1)

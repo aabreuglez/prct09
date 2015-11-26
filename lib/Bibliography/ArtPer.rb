@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class ArtPer < Bibliography
     #attr_reader :autor, :titulo, :serie, :editorial, :edicion, :fecha, :isbn
     attr_reader :diario, :lugar, :paginacion, :columna 
