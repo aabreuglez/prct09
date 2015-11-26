@@ -1,5 +1,6 @@
 
 class Bibliography
+    include Comparable
     attr_reader :autor, :titulo, :serie, :editorial, :edicion, :fecha, :isbn
     def initialize (*args)
         if args.length == 7
@@ -116,5 +117,14 @@ class Bibliography
             cadena = cadena + "\n"
         end
         cadena
+    end
+    
+    def <=>(other)
+      raise unless other.instance_of? Bibliography
+      if (@autor!=other.autor)
+          return @autor <=> other.autor
+      else
+          return @fecha <=> other.fecha
+      end
     end
 end

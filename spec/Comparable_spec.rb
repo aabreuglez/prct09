@@ -46,7 +46,7 @@ describe Bibliography do
         end
         
         it "Dos libros idénticos pueden haber sido publicados por editoriales diferentes y ser distintos en fecha" do
-            expect(@b1==@b4).to be false
+            expect(@b1).to_not eq (@b4)
         end
         
         it "Un libro solo puede compararse con un libro" do
