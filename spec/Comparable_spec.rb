@@ -12,7 +12,7 @@ describe Lista do
 
     @b1 = Lista.new([@var1,@var2,@var3])
     @b2 = Lista.new([@var1,@var2])
-    @b3 = Lista.new([@var4])    
+    @b3 = Lista.new([@var1])    
   end
   
   describe "Metodos de enumerable" do
@@ -27,6 +27,17 @@ describe Lista do
       end
       it "Realiza un conteo de los nodos" do
           expect(@b1.count).to eq(3)
+          expect(@b3.count).to_not eq(2)
+      end
+      
+      it "Posee el metodo collect" do
+          expect(@b3.collect{|i| i.value.to_s}).to eq(["Dave Thomas, Andy Hunt, Chad Fowler\nProgramming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide\nThe Facets of Ruby\nPragmatic Bookshelf; 4 edicion (July 7, 2013)\nISBN-13: 9781937785499\nISBN-10: 1937785491\n"])
+
+      end
+      
+      it "Posee el metodo any?" do
+          expect(@b2.any?).to be true
+          expect(@b3.any?).to_not be false
       end
   end
 end
