@@ -1,6 +1,7 @@
 class Lista 
   attr_reader :cabeza, :cola
   include Enumerable
+  
   def initialize(nodes)
     for i in 0..nodes.length-1 do
       nodes[i]=Node.new(nodes[i],nil,nil)
@@ -17,8 +18,11 @@ class Lista
         nodes[i].prev = nodes[i-1]
       end
       @cabeza.prev = nodes[j-1]
+    else
+      @cabeza.prev = @cola
+      @cola.next = @cabeza
     end
-
+   
   end
   
   def pop_back
@@ -117,10 +121,9 @@ class Lista
     actual
   end  
   
-  def each
+  def each(&block)
      actual = @cola
-     yield actual
-     while actual.next != nil do
+     while actual != nil do
         yield actual
         actual = actual.next
      end
