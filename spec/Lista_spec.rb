@@ -102,7 +102,7 @@ describe Lista do
 
   describe "Propiedad de enumerable" do
     it "Se puede recorrer con un each" do
-      @b1.each{|i| i}
+      @b3.each{|i| i}
     end
   end
   describe "Se puede recorrer la lista con el each" do

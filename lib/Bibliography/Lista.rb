@@ -18,9 +18,13 @@ class Lista
         nodes[i].prev = nodes[i-1]
       end
       @cabeza.prev = nodes[j-1]
-    else
-      @cabeza.prev = @cola
-      @cola.next = @cabeza
+    else 
+      if j == 1
+        @cabeza.prev = @cola
+        @cola.next = @cabeza
+      else
+        @cabeza = @cola
+      end
     end
    
   end
