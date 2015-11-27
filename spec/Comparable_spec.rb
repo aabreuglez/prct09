@@ -40,6 +40,10 @@ describe Lista do
           expect(@b2.any?).to be true
           expect(@b3.any?).to_not be false
       end
+      
+      it "Posee el metodo find" do
+          expect(@b1.find {|i| i.value==@var1}.value).to eq(@var1)
+      end
   end
 end
 
@@ -82,7 +86,7 @@ describe Bibliography do
         end
         
         it "Dos libros idénticos pueden haber sido publicados por editoriales diferentes y ser distintos en fecha" do
-            expect(@b1).to_not eq (@b4)
+            expect(@b1).to_not eq(@b4)
         end
         
         it "Un libro solo puede compararse con un libro" do
